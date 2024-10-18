@@ -3,11 +3,10 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
-import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
 
         // Создание таблицы User(ов)
@@ -24,7 +23,9 @@ public class Main {
         long maxUserID = 0;
         for (User user : users) {
             System.out.println(user);
-            if (user.getId() > maxUserID) {maxUserID = user.getId();}
+            if (user.getId() > maxUserID) {
+                maxUserID = user.getId();
+            }
         }
 
         //Удаление User из таблицы (по id)

@@ -9,14 +9,14 @@ public class Util {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "12345678";
 
-    public static Connection getConnection(){
-        Connection conn = null;
+    public static Connection getConnection() {
+        Connection conn;
         try{
             Class.forName(DB_DRIVER);
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Connection ERROR");
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return conn;
     }

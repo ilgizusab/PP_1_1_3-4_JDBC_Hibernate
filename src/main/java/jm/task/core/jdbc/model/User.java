@@ -70,6 +70,7 @@ public class User {
         if (name != null ? !name.equals(other.name) : other.name != null) return false;
         if (lastName != null ? !lastName.equals(other.lastName) : other.lastName != null) return false;
         if (age != null ? age.equals(other.age) : other.age != null) return false;
+
         return true;
     }
 
