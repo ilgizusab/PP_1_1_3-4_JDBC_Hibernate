@@ -4,21 +4,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    public static Connection getMySQLConnection() throws SQLException,
-            ClassNotFoundException {
-        String hostName = "localhost";
-        String dbName = "kata1";
-        String userName = "ilgiz";
-        String password = "12345678";
+    private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/kata1";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "12345678";
 
-        return getMySQLConnection(hostName, dbName, userName, password);
-    }
-
-    public static Connection getMySQLConnection(String hostName, String dbName,
-                                                String userName, String password) throws SQLException,
-                                                ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
-        return DriverManager.getConnection(connectionURL, userName, password);
+    public static Connection getConnection(){
+        Connection conn = null;
+        try{
+            Class.forName(DB_DRIVER);
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Connection ERROR");
+            e.printStackTrace();
+        }
+        return conn;
     }
 }

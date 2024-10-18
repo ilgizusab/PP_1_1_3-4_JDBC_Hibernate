@@ -5,8 +5,7 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root|localhost|ALLOW_NONEXISTENT_DEFINER|G
-|root||ilgiz||ALTER|G
+      <Grants>|root||ilgiz||ALTER|G
 |root||root|localhost|ALTER|G
 |root||ilgiz||ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
@@ -56,7 +55,6 @@
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
-|root||root|localhost|FLUSH_PRIVILEGES|G
 |root||root|localhost|FLUSH_STATUS|G
 |root||root|localhost|FLUSH_TABLES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
@@ -70,7 +68,6 @@
 |root||root|localhost|INSERT|G
 |root||ilgiz||LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
-|root||root|localhost|OPTIMIZE_LOCAL_TABLE|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
@@ -96,7 +93,7 @@
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SET_ANY_DEFINER|G
+|root||root|localhost|SET_USER_ID|G
 |root||ilgiz||SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
 |root||ilgiz||SHOW VIEW|G
@@ -116,7 +113,6 @@
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||root|localhost|TRANSACTION_GTID_TAG|G
 |root||ilgiz||TRIGGER|G
 |root||root|localhost|TRIGGER|G
 |root||ilgiz||UPDATE|G
@@ -126,7 +122,7 @@
 |root||root|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.4.3</ServerVersion>
+      <ServerVersion>8.0.40</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1032,7 +1028,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="289" parent="1" name="kata1">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-10-17.20:37:50</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-10-18.21:13:20</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="mysql">
@@ -1041,30 +1037,33 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="291" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="sys">
+    <schema id="292" parent="1" name="sakila">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="293" parent="1" name="ilgiz">
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="294" parent="1" name="mysql.infoschema">
+    <schema id="293" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="294" parent="1" name="world">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="295" parent="1" name="ilgiz"/>
+    <user id="296" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="295" parent="1" name="mysql.session">
+    <user id="297" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.sys">
+    <user id="298" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="root">
+    <user id="299" parent="1" name="root">
       <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
     </user>
   </database-model>
 </dataSource>
