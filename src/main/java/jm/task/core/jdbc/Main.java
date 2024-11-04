@@ -32,9 +32,9 @@ public class Main {
         userService.removeUserById(maxUserID);
 
         //Очистка содержания таблицы
-        //userService.cleanUsersTable();
+        userService.cleanUsersTable();
 
         //Удаление таблицы User(ов)
-        //userService.dropUsersTable();
+        userService.dropUsersTable();
     }
 }
